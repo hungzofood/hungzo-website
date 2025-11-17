@@ -1,12 +1,15 @@
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import bgimage from "./assets/Images/Background.png";
-import Hero from "./Components/Hero";
-import AppDownload from "./Components/AppDownload";
-import Contact from "./Components/Contact";
-import Career from "./Components/Career";
-import About from "./Components/About";
-import ExploreCategories from "./Components/ExploreCategories";
+import { lazy, Suspense } from "react";
+
+const Hero = lazy(() => import("./Components/Hero"));
+const AppDownload = lazy(() => import("./Components/AppDownload"));
+const About = lazy(() => import("./Components/About"));
+const Contact = lazy(() => import("./Components/Contact"));
+const Career = lazy(() => import("./Components/Career"));
+const ExploreCategories = lazy(() => import("./Components/ExploreCategories"));
+
 
 
 
@@ -29,28 +32,28 @@ function App() {
 
       {/* PAGE CONTENT */}
       <div className="pt-40 px-6">
-        <Routes>
+        <Suspense
+          fallback={<div className="text-center py-10">Loading...</div>}
+        >
+          <Routes>
+            {/* HOME PAGE */}
+            <Route
+              path="/"
+              element={
+                <>
+                  <Hero />
+                  <AppDownload />
+                  <ExploreCategories />
+                </>
+              }
+            />
 
-          {/* HOME PAGE */}
-          <Route
-            path="/"
-            element={
-              <>
-                <Hero />
-                <AppDownload />
-                <ExploreCategories /> 
-              </>
-            }
-          />
-
-          {/* CONTACT PAGE */}
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/about" element={<About />} />
-
-
-
-        </Routes>
+            {/* CONTACT PAGE */}
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/career" element={<Career />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </Suspense>
       </div>
 
       {/* FOOTER */}
