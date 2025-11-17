@@ -3,6 +3,14 @@ import Footer from "./Components/Footer";
 import bgimage from "./assets/Images/Background.png";
 import Hero from "./Components/Hero";
 import AppDownload from "./Components/AppDownload";
+import Contact from "./Components/Contact";
+import Career from "./Components/Career";
+import About from "./Components/About";
+import ExploreCategories from "./Components/ExploreCategories";
+
+
+
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -16,21 +24,36 @@ function App() {
         minHeight: "100%",
       }}
     >
-      {/* Navbar */}
+      {/* NAVBAR */}
       <Navbar />
 
-      {/* MAIN CONTENT */}
+      {/* PAGE CONTENT */}
       <div className="pt-40 px-6">
+        <Routes>
 
-        {/* Correct structure */}
-        <Hero />
-        <AppDownload />
+          {/* HOME PAGE */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <AppDownload />
+                <ExploreCategories /> 
+              </>
+            }
+          />
 
-        {/* extra filler content */}
-        <div className="h-[3000px]"></div>
+          {/* CONTACT PAGE */}
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/about" element={<About />} />
+
+
+
+        </Routes>
       </div>
 
-      {/* Footer */}
+      {/* FOOTER */}
       <Footer />
     </div>
   );

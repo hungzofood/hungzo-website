@@ -1,6 +1,7 @@
 import React from "react";
-import logo from "../assets/Images/hungzo-logo.png";
+import logo from "../assets/Images/Brand Logo.svg";
 import { FaPhoneAlt, FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -26,14 +27,30 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* MIDDLE */}
+        {/* MIDDLE — NOW CLICKABLE */}
         <div>
           <h3 className="text-xl font-semibold text-[#1E3A5F] mb-4">Useful links</h3>
 
           <ul className="space-y-3 text-lg text-[#1E3A5F]">
-            <li>About Us</li>
-            <li>Contact us</li>
-            <li>Career</li>
+
+            <li>
+              <Link to="/about" className="hover:text-[#23A989] transition">
+                About Us
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/contact" className="hover:text-[#23A989] transition">
+                Contact us
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/career" className="hover:text-[#23A989] transition">
+                Career
+              </Link>
+            </li>
+
           </ul>
         </div>
 
