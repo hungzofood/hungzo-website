@@ -8,6 +8,17 @@ import Dairy from "../assets/Images/Dairy.png";
 import Pulses from "../assets/Images/Pulses.png";
 import Coffee from "../assets/Images/Coffee.jpg";
 import Orange from "../assets/Images/Orange.png";
+import Spinnach from "../assets/Images/Spinnach.png";
+import Strawberry from "../assets/Images/Strawberry.png";
+import Pers from "../assets/Images/Pers.png";
+import Apple from "../assets/Images/Apple.png";
+import Carrot from "../assets/Images/Carrot.png";
+import Potatoes from "../assets/Images/Potatoe.png";
+import GrApple from "../assets/Images/GreenApple.png";
+import GrBeans from "../assets/Images/GreenBeans.webp";
+import Mandarin from "../assets/Images/mandarin.avif";
+import Berry from "../assets/Images/Berry.webp";
+import Raddish from "../assets/Images/raddish.webp";
 
 export default function ExploreCategories() {
   const categories = [
@@ -120,32 +131,32 @@ export default function ExploreCategories() {
               title: "Top Sells",
               products: [
                 { name: "Fresh Oranges", price: "₹79", oldPrice: "₹99", img: Orange },
-                { name: "Spinach Bundle", price: "₹25", oldPrice: "₹35", img: "https://via.placeholder.com/150?text=Spinach" },
-                { name: "Strawberries", price: "₹150", oldPrice: "₹180", img: "https://via.placeholder.com/150?text=Strawberries" },
+                { name: "Spinach Bundle", price: "₹25", oldPrice: "₹35", img: Spinnach},
+                { name: "Strawberries", price: "₹150", oldPrice: "₹180", img: Strawberry},
               ],
             },
             {
               title: "Top Rated",
               products: [
-                { name: "Fresh Persimmon", price: "₹120", oldPrice: "₹140", img: "https://via.placeholder.com/150?text=Persimmon" },
-                { name: "Green Beans", price: "₹60", oldPrice: "₹80", img: "https://via.placeholder.com/150?text=Green+Beans" },
-                { name: "Red Apple", price: "₹85", oldPrice: "₹120", img: "https://via.placeholder.com/150?text=Apple" },
+                { name: "Fresh Persimmon", price: "₹120", oldPrice: "₹140", img: Pers },
+                { name: "Green Beans", price: "₹60", oldPrice: "₹80", img: GrBeans},
+                { name: "Red Apple", price: "₹85", oldPrice: "₹120", img: Apple },
               ],
             },
             {
               title: "Trending Items",
               products: [
-                { name: "Carrots 1kg", price: "₹30", oldPrice: "₹40", img: "https://via.placeholder.com/150?text=Carrots" },
-                { name: "Potatoes 1kg", price: "₹20", oldPrice: "₹30", img: "https://via.placeholder.com/150?text=Potatoes" },
-                { name: "Mandarins", price: "₹95", oldPrice: "₹110", img: "https://via.placeholder.com/150?text=Mandarin" },
+                { name: "Carrots 1kg", price: "₹30", oldPrice: "₹40", img: Carrot },
+                { name: "Potatoes 1kg", price: "₹20", oldPrice: "₹30", img: Potatoes },
+                { name: "Mandarins", price: "₹95", oldPrice: "₹110", img: Mandarin },
               ],
             },
             {
               title: "Recently Added",
               products: [
-                { name: "Green Apple Fresh", price: "₹89", oldPrice: "₹120", img: "https://via.placeholder.com/150?text=Apple" },
-                { name: "Fresh Raddish", price: "₹28", oldPrice: "₹35", img: "https://via.placeholder.com/150?text=Carrots" },
-                { name: "Fresh Strawberry", price: "₹160", oldPrice: "₹190", img: "https://via.placeholder.com/150?text=Strawberry" },
+                { name: "Green Apple Fresh", price: "₹89", oldPrice: "₹120", img: GrApple },
+                { name: "Fresh Raddish", price: "₹28", oldPrice: "₹35", img: Raddish },
+                { name: "Fresh Berry", price: "₹160", oldPrice: "₹190", img: Berry },
               ],
             },
           ].map((section, idx) => (
