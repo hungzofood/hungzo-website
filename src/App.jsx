@@ -2,7 +2,7 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import bgimage from "./assets/Images/Background.png";
 import { lazy, Suspense } from "react";
-
+const DailyEssentials = lazy(() => import("./Components/DailyEssentials"));
 const Hero = lazy(() => import("./Components/Hero"));
 const AppDownload = lazy(() => import("./Components/AppDownload"));
 const About = lazy(() => import("./Components/About"));
@@ -31,7 +31,7 @@ function App() {
       <Navbar />
 
       {/* PAGE CONTENT */}
-      <div className="pt-40 px-6">
+      <div className="pt-40 ">
         <Suspense
           fallback={<div className="text-center py-10">Loading...</div>}
         >
@@ -44,6 +44,7 @@ function App() {
                   <Hero />
                   <AppDownload />
                   <ExploreCategories />
+                  <DailyEssentials />
                 </>
               }
             />

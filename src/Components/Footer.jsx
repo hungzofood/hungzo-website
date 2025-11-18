@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <img src={logo} alt="logo" className="w-14 h-14" />
             <div>
-              <h2 className="text-xl font-semibold text-[#F59E0B]">Hangzo</h2>
+              <h2 className="text-xl font-semibold text-[#F59E0B]">Hungzo</h2>
               <p className="text-gray-500 text-sm -mt-1">Hunger ka dost</p>
             </div>
           </div>
