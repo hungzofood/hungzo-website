@@ -18,7 +18,7 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   return (
     <div
-      className="bg-no-repeat bg-cover"
+      className="bg-fixed md:bg-local bg-no-repeat bg-cover"
       style={{
         fontFamily: "Urbanist, sans-serif",
         backgroundImage: `url(${bgimage})`,

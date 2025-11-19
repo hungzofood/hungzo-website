@@ -21,6 +21,7 @@ import Berry from "../assets/Images/Berry.webp";
 import Raddish from "../assets/Images/raddish.webp";
 
 export default function ExploreCategories() {
+  
   const categories = [
     { title: "Noodles", items: "20 Items", img: Noodles, bg: "bg-[#FDECEC]" },
     { title: "Spices", items: "23 Items", img: SpiceS, bg: "bg-[#F3FFF3]" },
@@ -46,16 +47,18 @@ export default function ExploreCategories() {
   return (
     <>
       {/* --------------------------------------------------------- */}
-      {/*  1️⃣  EXPLORE CATEGORIES CONTAINER                        */}
+      {/*  1️⃣ EXPLORE CATEGORIES                                   */}
       {/* --------------------------------------------------------- */}
-      <div className="w-full bg-[#CFE6DD] py-20 ">
+
+      <div className="w-full bg-[#CFE6DD] py-10 md:py-20">
+        
         {/* HEADER */}
-        <div className="max-w-[1400px] mx-auto px-6 md:px-20 flex items-center justify-between mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1A1F2F]">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-20 flex items-center justify-between mb-6 md:mb-10">
+          <h2 className="text-2xl md:text-4xl font-bold text-[#1A1F2F]">
             Explore Categories
           </h2>
 
-          <div className="flex items-center gap-10 text-lg font-medium text-[#303030]">
+          <div className="hidden md:flex items-center gap-10 text-lg font-medium text-[#303030]">
             <button className="text-[#2EC4B6] font-semibold cursor-pointer">All</button>
             <button className="cursor-pointer hover:text-[#2EC4B6]">Vegetables</button>
             <button className="cursor-pointer hover:text-[#2EC4B6]">Fruits</button>
@@ -65,51 +68,51 @@ export default function ExploreCategories() {
 
         {/* SLIDER */}
         <div className="relative w-full">
+
           <div className="max-w-[1400px] mx-auto relative">
 
-            {/* LEFT BUTTON */}
+            {/* LEFT BUTTON — Hide on mobile */}
             <button
               onClick={scrollLeft}
               disabled={index === 0}
-              className={`absolute left-4 top-1/2 transform -translate-y-1/2 z-20
-                w-12 h-12 rounded-full bg-white border border-[#2EC4B6] shadow-md flex items-center justify-center text-xl transition
+              className={`hidden md:flex absolute left-4 top-1/2 transform -translate-y-1/2 z-20
+                w-12 h-12 rounded-full bg-white border border-[#2EC4B6] shadow-md items-center justify-center text-xl transition
                 ${index === 0 ? "opacity-30 cursor-not-allowed" : "hover:bg-[#2EC4B6] hover:text-white"}
               `}
             >
               ‹
             </button>
 
-            {/* VIEWPORT */}
-            <div className="overflow-hidden w-full">
+            {/* ✔ Desktop → slider transform */}
+            {/* ✔ Mobile → natural horizontal scrolling */}
+
+            <div className="w-full overflow-x-auto md:overflow-hidden px-4 md:px-0 flex md:block gap-6 md:gap-0 scroll-smooth">
               <div
-                className="flex items-start transition-transform duration-500 ease-out"
+                className="flex items-start md:transition-transform md:duration-500 md:ease-out gap-6 md:gap-[40px]"
                 style={{
-                  transform: `translateX(-${index * STEP}px)`,
-                  gap: "40px",
-                  paddingLeft: "80px",
-                  paddingRight: "80px",
+                  transform: window.innerWidth >= 768 ? `translateX(-${index * STEP}px)` : "none",
                 }}
               >
                 {categories.map((cat, i) => (
                   <div
                     key={i}
-                    className={`${cat.bg} w-60 rounded-2xl p-6 shadow-md flex flex-col items-center shrink-0
-                    transform transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl hover:-translate-y-1 cursor-pointer overflow-hidden`}
+                    className={`${cat.bg} min-w-[160px] md:w-60 rounded-2xl p-4 md:p-6 shadow-md flex flex-col items-center shrink-0
+                    transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer`}
                   >
-                    <img src={cat.img} className="w-[140px] h-[140px] object-contain mb-4" />
-                    <h3 className="text-xl font-semibold text-[#2A2F4F]">{cat.title}</h3>
-                    <p className="text-gray-500 mt-1">{cat.items}</p>
+                    <img src={cat.img} className="w-[100px] md:w-[140px] h-[100px] md:h-[140px] object-contain mb-3" />
+                    <h3 className="text-lg md:text-xl font-semibold text-[#2A2F4F]">{cat.title}</h3>
+                    <p className="text-gray-500 text-sm mt-1">{cat.items}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* RIGHT BUTTON */}
+            {/* RIGHT BUTTON — Hide on mobile */}
             <button
               onClick={scrollRight}
               disabled={index === MAX_INDEX}
-              className={`absolute right-4 top-1/2 transform -translate-y-1/2 z-20
-                w-12 h-12 rounded-full bg-white border border-[#2EC4B6] shadow-md flex items-center justify-center text-xl transition
+              className={`hidden md:flex absolute right-4 top-1/2 transform -translate-y-1/2 z-20
+                w-12 h-12 rounded-full bg-white border border-[#2EC4B6] shadow-md items-center justify-center text-xl transition
                 ${index === MAX_INDEX ? "opacity-30 cursor-not-allowed" : "hover:bg-[#2EC4B6] hover:text-white"}
               `}
             >
@@ -121,25 +124,27 @@ export default function ExploreCategories() {
       </div>
 
       {/* --------------------------------------------------------- */}
-      {/*  2️⃣  ITEMS LISTINGS (Top sells, Trending, etc.)          */}
+      {/*  2️⃣ PRODUCT SECTIONS                                     */}
       {/* --------------------------------------------------------- */}
-      <div className="w-full mt-24">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 px-6 md:px-20">
+
+      <div className="w-full mt-12 md:mt-24">
+        
+        <div className="max-w-[1400px] mx-auto px-4 md:px-20">
 
           {[
             {
               title: "Top Sells",
               products: [
                 { name: "Fresh Oranges", price: "₹79", oldPrice: "₹99", img: Orange },
-                { name: "Spinach Bundle", price: "₹25", oldPrice: "₹35", img: Spinnach},
-                { name: "Strawberries", price: "₹150", oldPrice: "₹180", img: Strawberry},
+                { name: "Spinach Bundle", price: "₹25", oldPrice: "₹35", img: Spinnach },
+                { name: "Strawberries", price: "₹150", oldPrice: "₹180", img: Strawberry },
               ],
             },
             {
               title: "Top Rated",
               products: [
                 { name: "Fresh Persimmon", price: "₹120", oldPrice: "₹140", img: Pers },
-                { name: "Green Beans", price: "₹60", oldPrice: "₹80", img: GrBeans},
+                { name: "Green Beans", price: "₹60", oldPrice: "₹80", img: GrBeans },
                 { name: "Red Apple", price: "₹85", oldPrice: "₹120", img: Apple },
               ],
             },
@@ -160,31 +165,43 @@ export default function ExploreCategories() {
               ],
             },
           ].map((section, idx) => (
-            <div key={idx}>
-              <h2 className="text-2xl font-semibold text-[#2A2F4F] mb-3">{section.title}</h2>
-              <div className="h-1 w-24 bg-[#2A2F4F] rounded mb-6"></div>
+            <div key={idx} className="mb-12">
 
-              {section.products.map((p, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-4 mb-6 bg-white p-3 rounded-xl shadow transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                >
-                  <img src={p.img} className="w-20 h-20 rounded-lg object-cover" />
-                  <div>
-                    <p className="font-medium text-[#1A1F2F]">{p.name}</p>
-                    <p className="text-yellow-500 text-sm">★★★★☆ (4)</p>
-                    <p className="text-[#23A989] font-bold">
-                      {p.price}
-                      <span className="text-gray-400 line-through ml-2">{p.oldPrice}</span>
-                    </p>
+              <h2 className="text-xl md:text-2xl font-semibold text-[#2A2F4F] mb-2">{section.title}</h2>
+              <div className="h-1 w-20 md:w-24 bg-[#2A2F4F] rounded mb-6"></div>
+
+              {/* Horizontal scroll on mobile */}
+              <div className="flex md:grid md:grid-cols-1 md:gap-6 gap-4 overflow-x-auto scroll-smooth">
+                
+                {section.products.map((p, i) => (
+                  <div
+                    key={i}
+                    className="min-w-[160px] md:min-w-0 flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4 bg-white p-3 rounded-xl shadow hover:shadow-lg transition"
+                  >
+                    <img src={p.img} className="w-20 h-20 rounded-lg object-cover" />
+
+                    <div>
+                      <p className="font-medium text-[#1A1F2F] text-center md:text-left">{p.name}</p>
+                      <p className="text-yellow-500 text-sm text-center md:text-left">★★★★☆ (4)</p>
+
+                      <p className="text-[#23A989] font-bold text-center md:text-left">
+                        {p.price}
+                        <span className="text-gray-400 line-through ml-2">{p.oldPrice}</span>
+                      </p>
+                    </div>
+
                   </div>
-                </div>
-              ))}
+                ))}
+
+              </div>
+
             </div>
           ))}
 
         </div>
+
       </div>
+
     </>
   );
 }
