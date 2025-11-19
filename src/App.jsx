@@ -22,16 +22,18 @@ function App() {
       style={{
         fontFamily: "Urbanist, sans-serif",
         backgroundImage: `url(${bgimage})`,
-        backgroundSize: "100% auto",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover", // CLEAN, maintains proportions
+        backgroundPosition: "top center", // aligns perfectly like screenshot 2
         width: "100%",
-        minHeight: "100%",
+        minHeight: "100vh", // covers entire screen first load
       }}
     >
       {/* NAVBAR */}
       <Navbar />
 
       {/* PAGE CONTENT */}
-      <div className="pt-40 ">
+      <div className="pt-28 md:pt-40">
         <Suspense
           fallback={<div className="text-center py-10">Loading...</div>}
         >

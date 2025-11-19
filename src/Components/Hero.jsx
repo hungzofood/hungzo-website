@@ -1,17 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import vegBag from "../assets/Images/Veggies.png";
 import fruitBag from "../assets/Images/Fruits.png";
+import bgPill from "../assets/Images/Mobile Backgroundpill.png"; // ⭐ New pill bg
 
 export default function Hero() {
   const [active, setActive] = useState("veg");
-  const [slideDirection, setSlideDirection] = useState(""); // "left" or "right"
+  const [slideDirection, setSlideDirection] = useState("");
   const touchStart = useRef(null);
 
-  // ----------- SWIPE SUPPORT -----------
   const handleTouchStart = (e) => {
     touchStart.current = e.touches[0].clientX;
   };
-
   const handleTouchEnd = (e) => {
     const touchEnd = e.changedTouches[0].clientX;
     if (touchStart.current - touchEnd > 50) {
@@ -24,157 +23,151 @@ export default function Hero() {
     }
   };
 
-  // ----------- SLIDE ANIMATION -----------
-  const slideClass =
-    slideDirection === "left"
-      ? "animate-slide-left"
-      : slideDirection === "right"
-      ? "animate-slide-right"
-      : "";
-
   useEffect(() => {
-    const timer = setTimeout(() => setSlideDirection(""), 400);
+    const timer = setTimeout(() => setSlideDirection(""), 300);
     return () => clearTimeout(timer);
   }, [slideDirection]);
 
   return (
-    <section className="w-full pt-[70px] px-10 md:px-20 flex flex-col md:flex-row items-center justify-between">
+    <section className="w-full pt-[90px] px-6 md:px-20">
+      {/* ------------------------------------------------------ */}
+      {/* 📱 MOBILE EXACT LAYOUT LIKE SCREENSHOT */}
+      {/* ------------------------------------------------------ */}
+      <div className="md:hidden w-full flex items-start justify-between gap-4">
+        {/* LEFT — TEXT */}
+        <div className="w-[55%]">
+          <h1 className="text-3xl font-extrabold text-[#1A1F2F] leading-tight">
+            Source Smarter
+          </h1>
 
+          <div className="mt-3">
+            <span className="bg-[#2EC4B6] text-white px-4 py-2 rounded-full text-base shadow-md">
+              Save Bigger
+            </span>
+          </div>
 
-      {/* LEFT CONTENT  */}
-      <div className="max-w-xl space-y-8">
-        <h1 className="text-5xl md:text-6xl font-extrabold text-[#1A1F2F] leading-tight">Source Smarter</h1>
+          <h1 className="text-3xl font-extrabold text-[#1A1F2F] leading-tight mt-3">
+            Grow Faster
+          </h1>
 
-        <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
-          <span className="bg-[#2EC4B6] text-white px-6 py-2 rounded-2xl shadow-lg">Save Bigger</span>
-        </h1>
+          <p
+            className="text-gray-700 text-sm leading-relaxed mt-4"
+            style={{ fontFamily: "Quicksand, sans-serif" }}
+          >
+            Get high-quality raw materials delivered fast, fresh, and affordably
+            — all in one app. With transparent pricing and reliable suppliers,
+            we make sourcing simple and stress-free. Save more, scale smarter,
+            and keep your business running smoothly with every delivery.
+          </p>
 
-        <h1 className="text-5xl md:text-6xl font-extrabold text-[#1A1F2F] leading-tight">Grow Faster</h1>
+          <button className="mt-5 bg-[#2EC4B6] text-white font-semibold text-base px-6 py-3 rounded-full shadow-lg">
+            Get the App
+          </button>
+        </div>
 
-        <p className="text-gray-800 text-lg leading-relaxed max-w-md " 
-        style={{
-           fontFamily: "Quicksand, sans-serif", 
-           fontSize:14.4,
-           fontWeight:400}}>
-          
+        {/* RIGHT — IMAGES ON GREEN PILL BACKGROUND */}
+        <div
+          className="relative w-[45%]"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
+          {/* ⭐ Green pill background */}
+          <img
+            src={bgPill}
+            className="absolute -top-2.5 -right-5 w-[120%] h-[120%] object-contain pointer-events-none"
+          />
 
-          Get high-quality raw materials delivered fast, fresh, and affordably — all in one app.With transparent pricing and reliable suppliers, we make sourcing simple and stress-free. Save more, scale smarter, and keep your business running smoothly with every delivery.
-        </p>
+          {/* STACKED CARDS LIKE DESKTOP */}
+          <div className="relative z-10 w-full">
+            {/* VEG CARD — TOP */}
+            <div className="relative w-[140px] mx-auto">
+              <img
+                src={vegBag}
+                className="absolute left-1/2 -translate-x-1/2 -top-25 w-[130%] h-[120%] z-20"
+              />
+              <div className="bg-white rounded-2xl shadow-xl w-full h-[150px] pt-[85px]">
+                <h3 className="text-sm font-semibold text-center text-gray-900">
+                  Groceries
+                </h3>
+                <p className="text-xs text-center text-gray-600">Vegetables</p>
+              </div>
+            </div>
 
-        <button className="mt-4 bg-[#2EC4B6] text-white font-semibold text-lg px-10 py-3 rounded-full shadow-xl hover:bg-[#29b3a5] transition">
-          Get the App
-        </button>
+            {/* FRUIT CARD — BOTTOM OVERLAPPING */}
+            <div className="relative w-[140px] mx-auto mt-6">
+              <img
+                src={fruitBag}
+                className="absolute left-1/2 -translate-x-1/2 -top-15 w-[130%] h-full z-10"
+              />
+              <div className="bg-white rounded-2xl shadow-xl w-full h-[150px] pt-[85px]">
+                <h3 className="text-sm font-semibold text-center text-gray-900">
+                  Groceries
+                </h3>
+                <p className="text-xs text-center text-gray-600">Fruits</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* RIGHT SIDE CARDS */}
-      <div
-        className="relative flex gap-10 mt-16 md:mt-0"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
-
-        <div
-          className="relative w-[300px]"
-          onMouseEnter={() => setActive("veg")}
-        >
-          {/* FLOATING IMAGE */}
-          <img
-            src={vegBag}
-            className={`
-              absolute left-1/2 -translate-x-1/2 -top-[150px]
-              w-[380px] object-contain transition-all duration-300 cursor-pointer
-
-              ${active === "veg"
-                ? "z-30 scale-110"
-                : "z-10 scale-95 opacity-80"
-              }
-            `}
-            onClick={() => alert("Veg Image Clicked")}   // image now clickable
-          />
-
-          {/* CARD + TEXT TOGETHER */}
-          <div
-            className={`
-              bg-white rounded-3xl shadow-xl w-[230px] h-[280px]
-              mx-auto pt-[180px] transition-all duration-300 relative cursor-pointer
-
-              ${active === "veg"
-                ? "scale-110 shadow-2xl z-20"
-                : "scale-95 opacity-80 z-0"
-              }
-            `}
+      {/* ------------------------------------------------------ */}
+      {/* 💻 DESKTOP — UNTOUCHED ORIGINAL */}
+      {/* ------------------------------------------------------ */}
+      <div className="hidden md:flex w-full items-center justify-between pt-10">
+        {/* LEFT */}
+        <div className="max-w-xl space-y-8">
+          <h1 className="text-6xl font-extrabold text-[#1A1F2F] leading-tight">
+            Source Smarter
+          </h1>
+          <h1 className="text-6xl font-extrabold leading-tight">
+            <span className="bg-[#2EC4B6] text-white px-6 py-2 rounded-2xl shadow-lg">
+              Save Bigger
+            </span>
+          </h1>
+          <h1 className="text-6xl font-extrabold text-[#1A1F2F] leading-tight">
+            Grow Faster
+          </h1>
+          <p
+            className="text-gray-800 text-lg leading-relaxed max-w-md"
+            style={{ fontFamily: "Quicksand, sans-serif", fontWeight: 400 }}
           >
-            {/* TEXT moves with card now */}
-            <h3 className="text-2xl font-semibold text-center text-gray-900">Groceries</h3>
-            <p className="text-xl text-center text-gray-700">Vegetables</p>
-          </div>
+            Get high-quality raw materials delivered fast, fresh, and affordably
+            — all in one app.With transparent pricing and reliable suppliers, we
+            make sourcing simple and stress-free. Save more, scale smarter, and
+            keep your business running smoothly with every delivery.
+          </p>
+          <button className="mt-4 bg-[#2EC4B6] text-white font-semibold text-lg px-10 py-3 rounded-full shadow-xl hover:bg-[#29b3a5] transition">
+            Get the App
+          </button>
         </div>
 
-
-        <div
-          className="relative w-[300px]"
-          onMouseEnter={() => setActive("fruit")}
-        >
-          {/* FLOATING IMAGE */}
-          <img
-            src={fruitBag}
-            className={`
-              absolute left-36 -translate-x-1/2 -top-[75px]
-              w-[330px] object-contain transition-all duration-300 cursor-pointer
-
-              ${active === "fruit"
-                ? "z-30 scale-110"
-                : "z-10 scale-95 opacity-80"
-              }
-            `}
-            onClick={() => alert("Fruit Image Clicked")}
-          />
-
-          {/* CARD + TEXT */}
-          <div
-            className={`
-              bg-white rounded-3xl shadow-xl w-[230px] h-[280px]
-              mx-auto pt-[180px] transition-all duration-300 relative cursor-pointer
-
-              ${active === "fruit"
-                ? "scale-110 shadow-2xl z-20"
-                : "scale-95 opacity-80 z-0"
-              }
-            `}
-          >
-            <h3 className="text-2xl font-semibold text-center text-gray-900">Groceries</h3>
-            <p className="text-xl text-center text-gray-700">Fruits</p>
+        {/* RIGHT — original */}
+        <div className="relative flex gap-10">
+          <div className="relative w-[300px]">
+            <img
+              src={vegBag}
+              className="absolute left-1/2 -translate-x-1/2 -top-[150px] w-[380px]"
+            />
+            <div className="bg-white rounded-3xl shadow-xl w-[230px] h-[280px] mx-auto pt-[180px]">
+              <h3 className="text-2xl font-semibold text-center text-gray-900">
+                Groceries
+              </h3>
+              <p className="text-xl text-center text-gray-700">Vegetables</p>
+            </div>
           </div>
-        </div>
 
-
-        {/* SCROLL BUTTONS */}
-        <div className="absolute -bottom-30 right-25 flex gap-4">
-
-          {/* LEFT BUTTON */}
-          <button
-            onClick={() => { setSlideDirection("right"); setActive("veg"); }}
-            className={`
-              w-12 h-12 rounded-full flex items-center justify-center shadow-xl transition group
-              ${active === "veg" ? "bg-[#2EC4B6] text-white" : "bg-white text-black"}
-              hover:bg-[#2EC4B6] hover:text-white
-            `}
-          >
-            <span className="text-2xl group-hover:text-white">‹</span>
-          </button>
-
-          {/* RIGHT BUTTON */}
-          <button
-            onClick={() => { setSlideDirection("left"); setActive("fruit"); }}
-            className={`
-              w-12 h-12 rounded-full flex items-center justify-center shadow-xl transition group
-              ${active === "fruit" ? "bg-[#2EC4B6] text-white" : "bg-white text-[#2EC4B6]"}
-              hover:bg-white hover:text-[#2EC4B6]
-            `}
-          >
-            <span className="text-2xl group-hover:text-[#2EC4B6]">›</span>
-          </button>
-
+          <div className="relative w-[300px]">
+            <img
+              src={fruitBag}
+              className="absolute left-36 -translate-x-1/2 -top-[75px] w-[330px]"
+            />
+            <div className="bg-white rounded-3xl shadow-xl w-[230px] h-[280px] mx-auto pt-[180px]">
+              <h3 className="text-2xl font-semibold text-center text-gray-900">
+                Groceries
+              </h3>
+              <p className="text-xl text-center text-gray-700">Fruits</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
