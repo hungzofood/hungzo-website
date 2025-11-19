@@ -6,79 +6,69 @@ import playstore from "../assets/Images/Playstore.png";
 
 export default function AppDownload() {
   return (
-    <section className="w-full mt-44 px-10 md:px-20 flex flex-col md:flex-row items-center justify-between">
-
-
-      {/* LEFT SIDE TEXT */}
-
-      <div className="max-w-lg flex flex-col">
-
-        {/* HEADING */}
-        <div>
+    <section className="w-full mt-20 px-6 md:px-20 bg-[#FFFFFF]">
+      <div
+        className="
+          w-full 
+          flex flex-col md:flex-row
+          items-center md:items-start 
+          justify-between 
+          gap-10 md:gap-6
+        "
+      >
+        {/* LEFT TEXT */}
+        <div className="w-full md:w-[55%] lg:w-[60%] flex flex-col md:mt-10 text-center md:text-left">
           <h2
+            className="leading-snug"
             style={{
               fontFamily: "Quicksand, sans-serif",
-              fontSize: "36px",
+              fontSize: "34px",
               fontWeight: 700,
               color: "#1D2A49",
             }}
-            className="leading-tight -mt-30"
           >
-            Shop Faster With <br /> Hangzo App
+            Shop Faster With Hangzo <br className="hidden md:block" /> App
           </h2>
-        </div>
 
-        {/* SEPARATE DIV — Available on Android & iOS */}
-        <div className="mt-2 mb-10">
           <p
+            className="mt-2"
             style={{
               fontFamily: "Quicksand, sans-serif",
-              fontSize: "20px",
+              fontSize: "15px",
               fontWeight: 300,
               color: "#6B7280",
             }}
           >
             Available on both IOS & Android
           </p>
+
+          {/* STORE BUTTONS */}
+          
         </div>
 
-  {/* STORE BUTTONS (Independent div) */}
-  <div className="flex gap-3 mt-6">
+        {/* RIGHT – PHONES */}
+        <div className="w-full md:w-[45%] lg:w-[50%] flex items-center justify-center relative mt-4 md:mt-20">
+          <img
+            src={phone1}
+            className="w-[120px] sm:w-[150px] md:w-[260px] lg:w-[300px] rotate-[-8deg] drop-shadow-2xl relative z-10"
+          />
 
-    <img
-      src={appstore}
-      alt="App Store"
-      className="h-[58px] w-auto shrink-0 cursor-pointer hover:scale-105 transition object-contain"
-    />
-
-    <img
-      src={playstore}
-      alt="Google Play"
-      className="h-[65px] w-auto shrink-0 cursor-pointer hover:scale-105 transition object-contain"
-      style={{ marginTop: "-3px" }}
-    />
-
-  </div>
-
-</div>
-
-
-
-
-      {/* RIGHT SIDE PHONES */}
-      <div className="relative mt-20 md:mt-0 flex items-center">
-        <img
-          src={phone1}
-          alt="App Phone 1"
-          className="w-72 md:w-[330px] drop-shadow-2xl rotate-[-8deg] relative z-10"
-        />
-        <img
-          src={phone2}
-          alt="App Phone 2"
-          className="w-72 md:w-[330px] drop-shadow-2xl rotate-[8deg] -ml-12 md:-ml-20"
-        />
+          <img
+            src={phone2}
+            className="w-[120px] sm:w-[150px] md:w-[260px] lg:w-[300px] rotate-[8deg] drop-shadow-2xl -ml-8 sm:-ml-10 md:-ml-20"
+          />
+        </div>
+        <div className="flex flex-row justify-center md:justify-start gap-3 mb-10 mt-4">
+            <img
+              src={appstore}
+              className="h-[34px] md:h-[38px] object-contain"
+            />
+            <img
+              src={playstore}
+              className="h-[38px] md:h-[42px] object-contain"
+            />
+          </div>
       </div>
-
     </section>
   );
 }

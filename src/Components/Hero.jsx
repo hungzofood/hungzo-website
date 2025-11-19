@@ -74,16 +74,16 @@ export default function Hero() {
           {/* ⭐ Green pill background */}
           <img
             src={bgPill}
-            className="absolute -top-2.5 -right-5 w-[120%] h-[120%] object-contain pointer-events-none"
+            className="absolute -top-1.5 right-2 w-[120%] h-[120%] object-contain pointer-events-none"
           />
 
           {/* STACKED CARDS LIKE DESKTOP */}
           <div className="relative z-10 w-full">
             {/* VEG CARD — TOP */}
-            <div className="relative w-[140px] mx-auto">
+            <div className="relative w-[140px] -mx-4">
               <img
                 src={vegBag}
-                className="absolute left-1/2 -translate-x-1/2 -top-25 w-[130%] h-[120%] z-20"
+                className="absolute left-1/2 -translate-x-1/2 -top-21 w-full h-[110%] z-20"
               />
               <div className="bg-white rounded-2xl shadow-xl w-full h-[150px] pt-[85px]">
                 <h3 className="text-sm font-semibold text-center text-gray-900">
@@ -94,7 +94,7 @@ export default function Hero() {
             </div>
 
             {/* FRUIT CARD — BOTTOM OVERLAPPING */}
-            <div className="relative w-[140px] mx-auto mt-6">
+            <div className="relative w-[140px] mx-8 mt-3">
               <img
                 src={fruitBag}
                 className="absolute left-1/2 -translate-x-1/2 -top-15 w-[130%] h-full z-10"

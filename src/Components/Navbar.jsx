@@ -85,8 +85,8 @@ export default function Navbar() {
       ============================ */}
       <div
         className={`
-          fixed top-0 left-0 h-full w-[300px] bg-gradient-to-b from-[#6DA59D] to-[#163C34]
-          z-[999] transform transition-transform duration-300
+          fixed top-0 left-0 h-full w-[300px] bg-linear-to-b from-[#6DA59D] to-[#163C34]
+          z-999 transform transition-transform duration-300
           ${open ? "translate-x-0" : "-translate-x-full"}
           p-6 md:hidden
         `}
@@ -136,7 +136,7 @@ export default function Navbar() {
 
       {open && (
         <div
-          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[998] md:hidden"
+          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-998 md:hidden"
           onClick={() => setOpen(false)}
         ></div>
       )}

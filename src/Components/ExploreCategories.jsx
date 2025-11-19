@@ -48,7 +48,7 @@ export default function ExploreCategories() {
       {/* --------------------------------------------------------- */}
       {/*  1️⃣  EXPLORE CATEGORIES CONTAINER                        */}
       {/* --------------------------------------------------------- */}
-      <div className="w-full bg-[#CFE6DD] py-20 mt-20">
+      <div className="w-full bg-[#CFE6DD] py-20 ">
         {/* HEADER */}
         <div className="max-w-[1400px] mx-auto px-6 md:px-20 flex items-center justify-between mb-10">
           <h2 className="text-3xl md:text-4xl font-bold text-[#1A1F2F]">
