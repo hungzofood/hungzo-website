@@ -21,7 +21,7 @@ import Berry from "../assets/Images/Berry.webp";
 import Raddish from "../assets/Images/raddish.webp";
 
 export default function ExploreCategories() {
-  
+
   const categories = [
     { title: "Noodles", items: "20 Items", img: Noodles, bg: "bg-[#FDECEC]" },
     { title: "Spices", items: "23 Items", img: SpiceS, bg: "bg-[#F3FFF3]" },
@@ -47,11 +47,11 @@ export default function ExploreCategories() {
   return (
     <>
       {/* --------------------------------------------------------- */}
-      {/*  1️⃣ EXPLORE CATEGORIES                                   */}
+      {/*  EXPLORE CATEGORIES                                      */}
       {/* --------------------------------------------------------- */}
 
       <div className="w-full bg-[#CFE6DD] py-10 md:py-20">
-        
+
         {/* HEADER */}
         <div className="max-w-[1400px] mx-auto px-4 md:px-20 flex items-center justify-between mb-6 md:mb-10">
           <h2 className="text-2xl md:text-4xl font-bold text-[#1A1F2F]">
@@ -68,24 +68,20 @@ export default function ExploreCategories() {
 
         {/* SLIDER */}
         <div className="relative w-full">
-
           <div className="max-w-[1400px] mx-auto relative">
 
-            {/* LEFT BUTTON — Hide on mobile */}
+            {/* LEFT BUTTON — Desktop only */}
             <button
               onClick={scrollLeft}
               disabled={index === 0}
               className={`hidden md:flex absolute left-4 top-1/2 transform -translate-y-1/2 z-20
-                w-12 h-12 rounded-full bg-white border border-[#2EC4B6] shadow-md items-center justify-center text-xl transition
-                ${index === 0 ? "opacity-30 cursor-not-allowed" : "hover:bg-[#2EC4B6] hover:text-white"}
-              `}
+              w-12 h-12 rounded-full bg-white border border-[#2EC4B6] shadow-md items-center justify-center text-xl transition
+              ${index === 0 ? "opacity-30 cursor-not-allowed" : "hover:bg-[#2EC4B6] hover:text-white"}`}
             >
               ‹
             </button>
 
-            {/* ✔ Desktop → slider transform */}
-            {/* ✔ Mobile → natural horizontal scrolling */}
-
+            {/* MOBILE scroll + DESKTOP transform */}
             <div className="w-full overflow-x-auto md:overflow-hidden px-4 md:px-0 flex md:block gap-6 md:gap-0 scroll-smooth">
               <div
                 className="flex items-start md:transition-transform md:duration-500 md:ease-out gap-6 md:gap-[40px]"
@@ -96,7 +92,7 @@ export default function ExploreCategories() {
                 {categories.map((cat, i) => (
                   <div
                     key={i}
-                    className={`${cat.bg} min-w-[160px] md:w-60 rounded-2xl p-4 md:p-6 shadow-md flex flex-col items-center shrink-0
+                    className={`${cat.bg} min-w-[160px] md:w-60 p-4 md:p-6 rounded-2xl shadow-md flex flex-col items-center shrink-0
                     transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer`}
                   >
                     <img src={cat.img} className="w-[100px] md:w-[140px] h-[100px] md:h-[140px] object-contain mb-3" />
@@ -107,14 +103,13 @@ export default function ExploreCategories() {
               </div>
             </div>
 
-            {/* RIGHT BUTTON — Hide on mobile */}
+            {/* RIGHT BUTTON — Desktop only */}
             <button
               onClick={scrollRight}
               disabled={index === MAX_INDEX}
               className={`hidden md:flex absolute right-4 top-1/2 transform -translate-y-1/2 z-20
-                w-12 h-12 rounded-full bg-white border border-[#2EC4B6] shadow-md items-center justify-center text-xl transition
-                ${index === MAX_INDEX ? "opacity-30 cursor-not-allowed" : "hover:bg-[#2EC4B6] hover:text-white"}
-              `}
+              w-12 h-12 rounded-full bg-white border border-[#2EC4B6] shadow-md items-center justify-center text-xl transition
+              ${index === MAX_INDEX ? "opacity-30 cursor-not-allowed" : "hover:bg-[#2EC4B6] hover:text-white"}`}
             >
               ›
             </button>
@@ -124,12 +119,11 @@ export default function ExploreCategories() {
       </div>
 
       {/* --------------------------------------------------------- */}
-      {/*  2️⃣ PRODUCT SECTIONS                                     */}
+      {/*  PRODUCT SECTIONS                                        */}
       {/* --------------------------------------------------------- */}
 
       <div className="w-full mt-12 md:mt-24">
-        
-        <div className="max-w-[1400px] mx-auto px-4 md:px-20">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-20 grid grid-cols-1 md:grid-cols-4 gap-10">
 
           {[
             {
@@ -170,13 +164,13 @@ export default function ExploreCategories() {
               <h2 className="text-xl md:text-2xl font-semibold text-[#2A2F4F] mb-2">{section.title}</h2>
               <div className="h-1 w-20 md:w-24 bg-[#2A2F4F] rounded mb-6"></div>
 
-              {/* Horizontal scroll on mobile */}
-              <div className="flex md:grid md:grid-cols-1 md:gap-6 gap-4 overflow-x-auto scroll-smooth">
-                
+              {/* MOBILE: horizontal scroll | DESKTOP: vertical list */}
+              <div className="flex md:flex-col gap-4 md:gap-6 overflow-x-auto md:overflow-visible scroll-smooth">
+
                 {section.products.map((p, i) => (
                   <div
                     key={i}
-                    className="min-w-[160px] md:min-w-0 flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4 bg-white p-3 rounded-xl shadow hover:shadow-lg transition"
+                    className="min-w-[160px] md:min-w-0 flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4 bg-white p-3 rounded-xl shadow transition hover:shadow-lg"
                   >
                     <img src={p.img} className="w-20 h-20 rounded-lg object-cover" />
 
@@ -199,7 +193,6 @@ export default function ExploreCategories() {
           ))}
 
         </div>
-
       </div>
 
     </>

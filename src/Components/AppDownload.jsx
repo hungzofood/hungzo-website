@@ -16,8 +16,10 @@ export default function AppDownload() {
           gap-10 md:gap-6
         "
       >
-        {/* LEFT TEXT */}
-        <div className="w-full md:w-[55%] lg:w-[60%] flex flex-col md:mt-10 text-center md:text-left">
+        {/* LEFT BLOCK (TEXT + BUTTONS on desktop) */}
+        <div className="w-full md:w-[55%] lg:w-[60%] flex flex-col md:mt-30 text-center md:text-left order-1">
+
+          {/* TEXT */}
           <h2
             className="leading-snug"
             style={{
@@ -42,12 +44,15 @@ export default function AppDownload() {
             Available on both IOS & Android
           </p>
 
-          {/* STORE BUTTONS */}
-          
+          {/* DESKTOP BUTTONS (inside left block) */}
+          <div className="hidden md:flex flex-row justify-start gap-3 mt-20">
+            <img src={appstore} className="h-[58px] object-contain" />
+            <img src={playstore} className="h-[61px] object-contain" />
+          </div>
         </div>
 
         {/* RIGHT – PHONES */}
-        <div className="w-full md:w-[45%] lg:w-[50%] flex items-center justify-center relative mt-4 md:mt-20">
+        <div className="w-full md:w-[45%] lg:w-[50%] flex items-center justify-center relative mt-4 md:mt-15 md:mb-15 order-2">
           <img
             src={phone1}
             className="w-[120px] sm:w-[150px] md:w-[260px] lg:w-[300px] rotate-[-8deg] drop-shadow-2xl relative z-10"
@@ -58,16 +63,13 @@ export default function AppDownload() {
             className="w-[120px] sm:w-[150px] md:w-[260px] lg:w-[300px] rotate-[8deg] drop-shadow-2xl -ml-8 sm:-ml-10 md:-ml-20"
           />
         </div>
-        <div className="flex flex-row justify-center md:justify-start gap-3 mb-10 mt-4">
-            <img
-              src={appstore}
-              className="h-[34px] md:h-[38px] object-contain"
-            />
-            <img
-              src={playstore}
-              className="h-[38px] md:h-[42px] object-contain"
-            />
-          </div>
+
+        {/* MOBILE BUTTONS (always below phones on mobile) */}
+        <div className="flex md:hidden flex-row justify-center gap-3 mb-10 mt-4 order-3">
+          <img src={appstore} className="h-[34px] object-contain" />
+          <img src={playstore} className="h-[38px] object-contain" />
+        </div>
+
       </div>
     </section>
   );

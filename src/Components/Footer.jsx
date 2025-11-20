@@ -23,7 +23,7 @@ export default function Footer() {
 
           <p className="mt-4 flex items-center gap-2 text-lg text-[#1E3A5F] font-semibold">
             <FaPhoneAlt className="text-[#1E3A5F] text-xl" />
-            Call Us: <span className="font-normal ml-1">9619399499</span>
+            Call Us: <span className="font-normal ml-1">9026505565</span>
           </p>
         </div>
 
