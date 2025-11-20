@@ -65,7 +65,6 @@ export default function About() {
     >
       {/* ========================= SECTION 1 ========================= */}
       <div className="flex flex-col md:flex-row justify-between items-start gap-16">
-
         {/* LEFT TEXT */}
         <div className="max-w-xl">
           <h1 className="text-4xl md:text-5xl font-extrabold text-[#1A1F2F] leading-tight">
@@ -84,7 +83,6 @@ export default function About() {
 
         {/* RIGHT CARDS */}
         <div className="relative flex flex-col gap-8">
-
           {/* BLUE BACKGROUND RECTANGLE */}
           <img
             src={RectangleBG}
@@ -125,15 +123,15 @@ export default function About() {
       </div>
 
       {/* ========================= SECTION 2 ========================= */}
+      {/* ========================= SECTION 2 ========================= */}
       <div className="flex flex-col md:flex-row justify-between items-center mt-24 gap-20">
-
         {/* LEFT — ROUND DELIVERY GUY */}
-        <div className="relative w-[380px] h-[380px] flex items-center justify-center">
+        <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] md:w-[380px] md:h-[380px] flex items-center justify-center mx-auto">
           <div className="w-full h-full rounded-full bg-[#D4EDE5] overflow-hidden flex items-center justify-center">
             <img
               src={deliveryGuy}
               alt="Delivery Guy"
-              className="w-[420px] object-cover -mt-4"
+              className="w-[300px] sm:w-[360px] md:w-[420px] object-cover -mt-4"
             />
           </div>
 
@@ -141,13 +139,13 @@ export default function About() {
           <img
             src={clientBox}
             alt="Satisfied Users"
-            className="absolute bottom-6 right-[-50px] w-[260px] drop-shadow-2xl"
+            className="absolute bottom-4 sm:bottom-6 right-[-20px] sm:right-[-30px] md:right-[-50px] w-[200px] sm:w-[230px] md:w-[260px] drop-shadow-2xl"
           />
         </div>
 
         {/* RIGHT — REVIEW SLIDER */}
-        <div className="max-w-xl transition-all duration-500">
-          <h2 className="text-4xl md:text-5xl font-extrabold leading-tight text-[#1A1F2F]">
+        <div className="max-w-xl transition-all duration-500 text-center md:text-left">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-[#1A1F2F]">
             What Our{" "}
             <span className="bg-black text-white px-2 pb-1 rounded-md">
               Clients Say
@@ -155,14 +153,12 @@ export default function About() {
             About Us
           </h2>
 
-          {/* Review text */}
-          <p className="text-gray-700 text-base mt-6 leading-relaxed">
+          <p className="text-gray-700 text-sm sm:text-base mt-6 leading-relaxed">
             {r.text}
           </p>
 
           {/* Reviewer Card */}
-          <div className="mt-14 flex items-center justify-between">
-
+          <div className="mt-10 sm:mt-14 flex flex-col sm:flex-row items-center sm:justify-between gap-6 sm:gap-0">
             {/* LEFT — Reviewer Info */}
             <div className="flex items-center gap-4">
               <img
@@ -197,7 +193,6 @@ export default function About() {
               </button>
             </div>
           </div>
-
         </div>
       </div>
     </div>
