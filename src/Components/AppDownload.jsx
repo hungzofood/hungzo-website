@@ -29,7 +29,7 @@ export default function AppDownload() {
               color: "#1D2A49",
             }}
           >
-            Shop Faster With Hangzo <br className="hidden md:block" /> App
+            Shop Faster With Hungzo <br className="hidden md:block" /> App
           </h2>
 
           <p
