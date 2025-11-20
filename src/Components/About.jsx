@@ -8,7 +8,6 @@ import NamanImg from "../assets/Images/Naman.png";
 import AdityaImg from "../assets/Images/Aditya.JPG";
 
 export default function About() {
-
   // ================== REVIEW DATA ==================
   const reviews = [
     {
@@ -52,7 +51,7 @@ export default function About() {
   const prev = () => setIndex((i) => (i - 1 + reviews.length) % reviews.length);
 
   useEffect(() => {
-    const timer = setInterval(next, 5000);
+    const timer = setInterval(next, 6000);
     return () => clearInterval(timer);
   }, []);
 
@@ -60,59 +59,55 @@ export default function About() {
 
   return (
     <div
-      className="w-full pt-40 pb-32 px-6 md:px-20"
+      className="w-full pt-36 pb-20 px-6 md:px-20"
       style={{ fontFamily: "Urbanist, sans-serif" }}
     >
-      {/* ========================= SECTION 1 ========================= */}
-      <div className="flex flex-col md:flex-row justify-between items-start gap-16">
-        {/* LEFT TEXT */}
-        <div className="max-w-xl">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-[#1A1F2F] leading-tight">
-            <span className="bg-black text-white px-3 py-1 rounded-md">
-              Goals
-            </span>{" "}
-            Of Our <br /> Company
-          </h1>
+      {/* ========================= MOBILE GOALS SECTION EXACT MATCH ========================= */}
+      <div className="w-full md:hidden px-6 pt-10 pb-20 bg-gradient-to-b from-[#D9EFE6] to-[#EAF7F3] rounded-3xl">
+        {/* Heading */}
+        <h1 className="text-4xl font-semibold text-[#1A1F2F] leading-tight">
+          <span className="bg-black text-white px-3 py-1 rounded-md mr-2">
+            Goals
+          </span>
+          Of Our <br /> Company
+        </h1>
 
-          <p className="text-gray-700 text-base mt-6 leading-relaxed">
-            Our goal is to make everyday ordering simple, fresh, and dependable.
-            We strive to deliver quality, trust, and convenience — ensuring
-            customer satisfaction every time.
-          </p>
-        </div>
+        {/* Description */}
+        <p className="text-gray-700 text-base mt-4 leading-relaxed pr-2">
+          Our goal is to make everyday ordering simple, fresh, and dependable.
+          We strive to deliver not just products, but a promise of quality,
+          trust, and convenience — ensuring customer satisfaction in every
+          delivery.
+        </p>
 
-        {/* RIGHT CARDS */}
-        <div className="relative flex flex-col gap-8">
-          {/* BLUE BACKGROUND RECTANGLE */}
-          <img
-            src={RectangleBG}
-            alt="Background Shape"
-            className="absolute top-[110px] -right-20 w-[330px] md:w-[380px] -z-10 rounded-xl"
-          />
+        {/* ================= CARD 1 ================= */}
+        <div className="mt-10 relative">
+          {/* Circle Icon Bubble */}
+          <div className="absolute -left-4 -top-4 bg-white w-12 h-12 rounded-full shadow-md flex items-center justify-center">
+            <img src={iconSatisfaction} className="w-6" />
+          </div>
 
-          {/* CUSTOMER SATISFACTION CARD */}
-          <div className="bg-[#23A989] text-white w-full max-w-[450px] p-6 rounded-xl shadow-lg relative">
-            <img
-              src={iconSatisfaction}
-              className="w-12 absolute -left-6 top-6"
-              alt="Satisfaction Icon"
-            />
-            <h3 className="text-xl font-semibold">Customer Satisfaction</h3>
+          {/* Card */}
+          <div className="bg-[#0FAF84] text-white w-full p-6 rounded-2xl shadow-xl">
+            <h3 className="text-lg font-semibold">Customer Satisfaction</h3>
             <p className="text-sm mt-2 leading-relaxed">
               Trusted by hundreds of businesses and households alike, we
               maintain a high satisfaction rate through consistent quality,
               freshness, and fast service.
             </p>
           </div>
+        </div>
 
-          {/* QUALITY CARD */}
-          <div className="bg-white text-black w-full max-w-[450px] p-6 rounded-xl shadow-lg relative">
-            <img
-              src={iconQuality}
-              className="w-12 absolute -left-6 top-6"
-              alt="Quality Icon"
-            />
-            <h3 className="text-xl font-semibold">Quality and Freshness</h3>
+        {/* ================= CARD 2 ================= */}
+        <div className="mt-8 relative">
+          {/* Circle Icon Bubble */}
+          <div className="absolute -left-4 -top-4 bg-white w-12 h-12 rounded-full shadow-md flex items-center justify-center">
+            <img src={iconQuality} className="w-6" />
+          </div>
+
+          {/* Card */}
+          <div className="bg-white text-black w-full p-6 rounded-2xl shadow-xl">
+            <h3 className="text-lg font-semibold">Quality and Freshness</h3>
             <p className="text-sm mt-2 leading-relaxed text-gray-700">
               Your trust drives us to deliver the best — fresh, clean, and
               quality-checked every time. Experience hassle-free delivery with
@@ -122,75 +117,84 @@ export default function About() {
         </div>
       </div>
 
-      {/* ========================= SECTION 2 ========================= */}
-      {/* ========================= SECTION 2 ========================= */}
-      <div className="flex flex-col md:flex-row justify-between items-center mt-24 gap-20">
-        {/* LEFT — ROUND DELIVERY GUY */}
-        <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] md:w-[380px] md:h-[380px] flex items-center justify-center mx-auto">
-          <div className="w-full h-full rounded-full bg-[#D4EDE5] overflow-hidden flex items-center justify-center">
+      {/* ========================= SECTION 2 — EXACT SCREENSHOT LAYOUT ========================= */}
+      <div className="mt-24">
+        {/* FLEX COLUMN ON MOBILE — ROW ON TABLET */}
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-16">
+          {/* LEFT — DELIVERY GUY ROUND IMAGE */}
+          
+          <div className="relative flex justify-center md:justify-start w-full">
+            {/* Wrapper so badge doesn't get clipped */}
+            <div className="relative w-[300px] h-[300px] rounded-full bg-[#D4EDE5] flex items-center justify-center shadow-md overflow-hidden">
+              <img
+                src={deliveryGuy}
+                alt="Delivery Guy"
+                className="w-[360px] object-cover -mt-4"
+              />
+            </div>
+
+            {/* FLOATING CLIENT BADGE — OUTSIDE THE CIRCLE */}
             <img
-              src={deliveryGuy}
-              alt="Delivery Guy"
-              className="w-[300px] sm:w-[360px] md:w-[420px] object-cover -mt-4"
+              src={clientBox}
+              alt="Satisfied Users"
+              className="
+      absolute 
+      bottom-2 
+      left-[180px]
+      w-[180px]
+      sm:w-[200px]
+      drop-shadow-2xl
+      z-20
+    "
             />
           </div>
 
-          {/* SATISFIED USER BOX */}
-          <img
-            src={clientBox}
-            alt="Satisfied Users"
-            className="absolute bottom-4 sm:bottom-6 right-[-20px] sm:right-[-30px] md:right-[-50px] w-[200px] sm:w-[230px] md:w-[260px] drop-shadow-2xl"
-          />
-        </div>
+          {/* RIGHT — REVIEW TEXT SECTION */}
+          <div className="max-w-xl w-full">
+            <h2 className="text-4xl font-bold leading-tight text-[#1A1F2F] mt-6 md:mt-0">
+              What Our{" "}
+              <span className="bg-black  text-white pb-1 rounded-md">
+                Clients Say
+              </span>{" "}
+              About Us
+            </h2>
 
-        {/* RIGHT — REVIEW SLIDER */}
-        <div className="max-w-xl transition-all duration-500 text-center md:text-left">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-[#1A1F2F]">
-            What Our{" "}
-            <span className="bg-black text-white px-2 pb-1 rounded-md">
-              Clients Say
-            </span>{" "}
-            About Us
-          </h2>
+            <p className="text-gray-700 text-base mt-6 leading-relaxed">
+              {r.text}
+            </p>
 
-          <p className="text-gray-700 text-sm sm:text-base mt-6 leading-relaxed">
-            {r.text}
-          </p>
-
-          {/* Reviewer Card */}
-          <div className="mt-10 sm:mt-14 flex flex-col sm:flex-row items-center sm:justify-between gap-6 sm:gap-0">
-            {/* LEFT — Reviewer Info */}
-            <div className="flex items-center gap-4">
-              <img
-                src={r.image}
-                className="w-14 h-14 rounded-full object-cover"
-                alt="Reviewer"
-              />
-
-              <div>
-                <h3 className="font-semibold text-lg">{r.name}</h3>
-                <p className="text-xs text-gray-500">{r.role}</p>
-                <p className="text-yellow-500 text-lg mt-1">
-                  {"★".repeat(r.rating)}
-                </p>
+            {/* REVIEWER + ARROWS */}
+            <div className="mt-10 flex items-center justify-between">
+              {/* Reviewer */}
+              <div className="flex items-center gap-4">
+                <img
+                  src={r.image}
+                  className="w-14 h-14 rounded-full object-cover"
+                />
+                <div>
+                  <h3 className="font-semibold text-lg">{r.name}</h3>
+                  <p className="text-xs text-gray-500">{r.role}</p>
+                  <p className="text-yellow-500 text-lg mt-1">
+                    {"★".repeat(r.rating)}
+                  </p>
+                </div>
               </div>
-            </div>
 
-            {/* RIGHT — Buttons */}
-            <div className="flex gap-4">
-              <button
-                onClick={prev}
-                className="w-10 h-10 rounded-full bg-white shadow-xl flex items-center justify-center text-[#2EC4B6] text-2xl hover:bg-[#2EC4B6] hover:text-white transition"
-              >
-                ‹
-              </button>
-
-              <button
-                onClick={next}
-                className="w-10 h-10 rounded-full bg-[#2EC4B6] shadow-xl flex items-center justify-center text-white text-2xl hover:bg-white hover:text-[#2EC4B6] transition"
-              >
-                ›
-              </button>
+              {/* Arrows */}
+              <div className="flex gap-4">
+                <button
+                  onClick={prev}
+                  className="w-10 h-10 rounded-full bg-white shadow-xl flex items-center justify-center text-[#2EC4B6] text-2xl hover:bg-[#2EC4B6] hover:text-white transition"
+                >
+                  ‹
+                </button>
+                <button
+                  onClick={next}
+                  className="w-10 h-10 rounded-full bg-[#2EC4B6] shadow-xl flex items-center justify-center text-white text-2xl hover:bg-white hover:text-[#2EC4B6] transition"
+                >
+                  ›
+                </button>
+              </div>
             </div>
           </div>
         </div>
