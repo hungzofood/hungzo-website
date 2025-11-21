@@ -136,7 +136,7 @@ ${message}
       </div>
 
       {/* BOTTOM BLANK SPACE */}
-      <div className="h-[40px]"></div>
+      <div className="h-10"></div>
     </div>
   );
 }
