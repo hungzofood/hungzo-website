@@ -34,7 +34,7 @@ export default function Career() {
 
   return (
     <div
-      className="w-full flex flex-col md:flex-row justify-center px-6 md:px-20 pt-40 pb-32 gap-20"
+      className="w-full flex flex-col md:flex-row justify-center px-6 md:px-20 md:pt-20 pt-5 pb-18 gap-20"
       style={{ fontFamily: "Urbanist, sans-serif" }}
     >
       {/* LEFT PANEL — TITLE SECTION */}

@@ -46,7 +46,7 @@ ${message}
       style={{ fontFamily: "Urbanist, sans-serif" }}
     >
       {/* TOP HEADING */}
-      <h2 className="text-2xl md:text-3xl font-semibold text-[#23A989] mt-32 mb-10 text-center">
+      <h2 className="text-2xl md:text-3xl font-semibold text-[#23A989] mt-10 mb-10 text-center">
         Have a Question? We’re Just a Message Away
       </h2>
 
@@ -136,7 +136,7 @@ ${message}
       </div>
 
       {/* BOTTOM BLANK SPACE */}
-      <div className="h-[200px]"></div>
+      <div className="h-[40px]"></div>
     </div>
   );
 }

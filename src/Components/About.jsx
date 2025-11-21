@@ -59,17 +59,17 @@ export default function About() {
 
   return (
     <div
-      className="w-full pt-36 pb-20 px-6 md:px-20"
+      className="w-full pt-18 pb-20 px-6 md:px-20"
       style={{ fontFamily: "Urbanist, sans-serif" }}
     >
       {/* ========================= MOBILE GOALS SECTION EXACT MATCH ========================= */}
-      <div className="w-full md:hidden px-6 pt-10 pb-20 bg-gradient-to-b from-[#D9EFE6] to-[#EAF7F3] rounded-3xl">
+      <div className="w-full px-6 pt-10 pb-20 bg-gradient-to-b from-[#D9EFE6] to-[#EAF7F3] rounded-3xl">
         {/* Heading */}
         <h1 className="text-4xl font-semibold text-[#1A1F2F] leading-tight">
           <span className="bg-black text-white px-3 py-1 rounded-md mr-2">
             Goals
           </span>
-          Of Our <br /> Company
+          Of Our Company
         </h1>
 
         {/* Description */}
@@ -118,14 +118,14 @@ export default function About() {
       </div>
 
       {/* ========================= SECTION 2 — EXACT SCREENSHOT LAYOUT ========================= */}
-      <div className="mt-24">
+      <div className="mt-6">
         {/* FLEX COLUMN ON MOBILE — ROW ON TABLET */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-16">
           {/* LEFT — DELIVERY GUY ROUND IMAGE */}
           
           <div className="relative flex justify-center md:justify-start w-full">
             {/* Wrapper so badge doesn't get clipped */}
-            <div className="relative w-[300px] h-[300px] rounded-full bg-[#D4EDE5] flex items-center justify-center shadow-md overflow-hidden">
+            <div className="relative w-[300px] h-[300px] md:ml-20 rounded-full bg-[#D4EDE5] flex items-center justify-center shadow-md overflow-hidden">
               <img
                 src={deliveryGuy}
                 alt="Delivery Guy"

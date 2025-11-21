@@ -29,7 +29,7 @@ export default function Hero() {
   }, [slideDirection]);
 
   return (
-    <section className="w-full pt-[90px] px-6 md:px-20">
+    <section className="w-full pt-[90px] md:pt-1 px-6 md:px-20">
       {/* ------------------------------------------------------ */}
       {/* 📱 MOBILE EXACT LAYOUT LIKE SCREENSHOT */}
       {/* ------------------------------------------------------ */}
