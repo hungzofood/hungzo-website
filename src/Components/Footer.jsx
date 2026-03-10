@@ -23,7 +23,7 @@ export default function Footer() {
 
           <p className="mt-4 flex items-center gap-2 text-lg text-[#1E3A5F] font-semibold">
             <FaPhoneAlt className="text-[#1E3A5F] text-xl" />
-            Call Us: <span className="font-normal ml-1">9026505565</span>
+            Call Us: <span className="font-normal ml-1">9278305565</span>
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export default function Footer() {
       <div className="w-full border-t border-gray-200 mt-10"></div>
 
       <p className="text-center text-sm text-[#1E3A5F] mt-3">
-        © 2025, All rights reserved
+        © 2026, All rights reserved
       </p>
     </footer>
   );
