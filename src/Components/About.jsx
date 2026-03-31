@@ -79,6 +79,18 @@ export default function About() {
           trust, and convenience — ensuring customer satisfaction in every
           delivery.
         </p>
+        <p className="text-gray-700 text-base mt-4 leading-relaxed pr-2">
+  Hungzo brings manufacturers, suppliers, and food businesses onto one digital
+  platform, enabling them to discover, compare, and purchase a wide range of
+  products — from raw ingredients and packaged food items to kitchen consumables
+  and equipment — all in one place.
+</p>
+
+<p className="text-gray-700 text-base mt-4 leading-relaxed pr-2">
+  With technology-driven procurement, transparent pricing, and reliable delivery,
+  Hungzo aims to become the backbone supply network for India's growing food
+  service industry.
+</p>
 
         {/* ================= CARD 1 ================= */}
         <div className="mt-10 relative">
@@ -112,6 +124,20 @@ export default function About() {
               Your trust drives us to deliver the best — fresh, clean, and
               quality-checked every time. Experience hassle-free delivery with
               products that stay as fresh as promised.
+            </p>
+          </div>
+          <br></br>
+          <div className="bg-white text-black w-full p-6 rounded-2xl shadow-xl">
+            <h3 className="text-lg font-semibold">Mission</h3>
+            <p className="text-sm mt-2 leading-relaxed text-gray-700">
+              To empower restaurants and food businesses with a smarter, faster, and more reliable procurement ecosystem.
+            </p>
+          </div>
+          <br></br>
+          <div className="bg-white text-black w-full p-6 rounded-2xl shadow-xl">
+            <h3 className="text-lg font-semibold">Vision</h3>
+            <p className="text-sm mt-2 leading-relaxed text-gray-700">
+              To build India's most trusted restaurant supply network for emerging cities.
             </p>
           </div>
         </div>

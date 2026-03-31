@@ -54,10 +54,33 @@ export default function Hero() {
             className="text-gray-700 text-sm leading-relaxed mt-4"
             style={{ fontFamily: "Quicksand, sans-serif" }}
           >
-            Get high-quality raw materials delivered fast, fresh, and affordably
-            — all in one app. With transparent pricing and reliable suppliers,
-            we make sourcing simple and stress-free. Save more, scale smarter,
-            and keep your business running smoothly with every delivery.
+            <p>
+              Hungzo.in is a next-generation B2B supply platform for
+              restaurants, cafés, cloud kitchens, and food businesses, designed
+              to simplify the way food businesses procure their daily
+              essentials.
+            </p>
+
+            <p>
+              Hungzo focuses on solving supply chain inefficiencies in Tier-2
+              and Tier-3 cities, where restaurant owners still rely heavily on
+              fragmented local markets, inconsistent quality, and multiple
+              vendors.
+            </p>
+
+            <p>
+              Hungzo brings manufacturers, suppliers, and food businesses onto
+              one digital platform, enabling them to discover, compare, and
+              purchase a wide range of products — from raw ingredients and
+              packaged food items to kitchen consumables and equipment — all in
+              one place.
+            </p>
+
+            <p>
+              With technology-driven procurement, transparent pricing, and
+              reliable delivery, Hungzo aims to become the backbone supply
+              network for India's growing food service industry.
+            </p>
           </p>
 
           <button className="mt-5 bg-[#2EC4B6] text-white font-semibold text-base px-6 py-3 rounded-full shadow-lg">
@@ -131,10 +154,19 @@ export default function Hero() {
             className="text-gray-800 text-lg leading-relaxed max-w-md"
             style={{ fontFamily: "Quicksand, sans-serif", fontWeight: 400 }}
           >
-            Get high-quality raw materials delivered fast, fresh, and affordably
-            — all in one app.With transparent pricing and reliable suppliers, we
-            make sourcing simple and stress-free. Save more, scale smarter, and
-            keep your business running smoothly with every delivery.
+            <p>
+              Hungzo.in is a next-generation B2B supply platform for
+              restaurants, cafés, cloud kitchens, and food businesses, designed
+              to simplify the way food businesses procure their daily
+              essentials.
+            </p>
+
+            <p>
+              Hungzo focuses on solving supply chain inefficiencies in Tier-2
+              and Tier-3 cities, where restaurant owners still rely heavily on
+              fragmented local markets, inconsistent quality, and multiple
+              vendors.
+            </p>
           </p>
           <button className="mt-4 bg-[#2EC4B6] text-white font-semibold text-lg px-10 py-3 rounded-full shadow-xl hover:bg-[#29b3a5] transition">
             Get the App
