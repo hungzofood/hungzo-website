@@ -12,7 +12,7 @@ export default function About() {
   const reviews = [
     {
       name: "Aditya P. Singh",
-      role: "Software Developer & Intern",
+      role: "Restaurant Owner",
       image: AdityaImg,
       rating: 5,
       text:
