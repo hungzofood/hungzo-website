@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/Images/Brand Logo.svg";
+import logo from "../assets/Images/hungzo-logo.png";
 import { FaPhoneAlt, FaFacebookF, FaLinkedinIn, FaInstagram, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -12,7 +12,19 @@ export default function Footer() {
         {/* LEFT */}
         <div>
           <div className="flex items-center gap-3">
-            <img src={logo} alt="logo" className="w-14 h-14" />
+            {/* <img src={logo} alt="logo" className="w-14 h-14" /> */}
+            <img
+              src={logo}
+              alt="logo"
+              className="
+    w-[70px] h-[70px]
+    rounded-full
+    object-contain
+    bg-white
+    p-1.5
+    shadow-md
+  "
+            />
             <div>
               <h2 className="text-xl font-semibold text-[#F59E0B]">Hungzo</h2>
               <p className="text-gray-500 text-sm -mt-1">Hunger ka dost</p>

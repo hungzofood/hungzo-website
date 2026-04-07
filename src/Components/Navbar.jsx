@@ -18,7 +18,22 @@ export default function Navbar() {
       <nav className="hidden md:flex absolute top-[15px] w-full justify-center z-50 bg-white/40 backdrop-blur-md h-[165px]">
         <div className="w-full max-w-[1440px] h-[155px] flex items-center justify-between px-5 md:px-[116px]">
           {/* LOGO (same size, untouched) */}
-          <img src={logo} alt="logo" className="mt-8 w-[132px] h-[104px] md:w-68 md:h-53 mx-auto md:mx-0" />
+          {/* <img src={logo} alt="logo" className="mt-8 w-[132px] h-[104px] md:w-68 md:h-53 mx-auto md:mx-0" /> */}
+
+          <img
+            src={logo}
+            alt="logo"
+            className="
+    h-[95px] md:h-[110px]
+    w-[95px] md:w-[110px]
+    rounded-full
+    object-contain
+    bg-white
+    p-2
+    shadow-md
+    mx-auto md:mx-0
+  "
+          />
 
           {/* DESKTOP MENU (original code untouched) */}
           <ul
@@ -30,30 +45,26 @@ export default function Navbar() {
             "
           >
             <li
-              className={`${
-                isActive("/") ? "text-[#23A989]" : "text-black"
-              } cursor-pointer`}
+              className={`${isActive("/") ? "text-[#23A989]" : "text-black"
+                } cursor-pointer`}
             >
               <Link to="/">Home</Link>
             </li>
             <li
-              className={`${
-                isActive("/about") ? "text-[#23A989]" : "text-black"
-              } cursor-pointer`}
+              className={`${isActive("/about") ? "text-[#23A989]" : "text-black"
+                } cursor-pointer`}
             >
               <Link to="/about">About us</Link>
             </li>
             <li
-              className={`${
-                isActive("/contact") ? "text-[#23A989]" : "text-black"
-              } cursor-pointer`}
+              className={`${isActive("/contact") ? "text-[#23A989]" : "text-black"
+                } cursor-pointer`}
             >
               <Link to="/contact">Contact us</Link>
             </li>
             <li
-              className={`${
-                isActive("/career") ? "text-[#23A989]" : "text-black"
-              } cursor-pointer`}
+              className={`${isActive("/career") ? "text-[#23A989]" : "text-black"
+                } cursor-pointer`}
             >
               <Link to="/career">Career</Link>
             </li>
@@ -74,7 +85,20 @@ export default function Navbar() {
         </button>
 
         {/* CENTER LOGO (your original size, untouched) */}
-        <img src={logo} alt="logo" className="w-[132px] h-[104px]" />
+        {/* <img src={logo} alt="logo" className="w-[132px] h-[104px]" /> */}
+
+        <img
+          src={logo}
+          alt="logo"
+          className="
+    h-[70px] w-[70px]
+    rounded-full
+    object-contain
+    bg-white
+    p-1.5
+    shadow-sm
+  "
+        />
 
         {/* BALANCER */}
         <div className="w-8"></div>
@@ -100,16 +124,18 @@ export default function Navbar() {
 
         {/* MOBILE LOGO (only here it is 30% bigger) */}
         <div className="w-full flex justify-center mb-10">
-          <img
-            src={logo}
-            alt="logo"
-            className="
-      w-[132px] h-[104px]   /* mobile original */
-      md:w-68 md:h-53       /* desktop original – restored */
-      rounded-full object-contain
-    "
-            style={{ aspectRatio: "1 / 1" }}
-          />
+        <img
+  src={logo}
+  alt="logo"
+  className="
+    h-[110px] w-[110px]
+    rounded-full
+    object-contain
+    bg-white
+    p-2
+    shadow-lg
+  "
+/>
         </div>
 
         {/* MOBILE MENU OPTIONS */}
